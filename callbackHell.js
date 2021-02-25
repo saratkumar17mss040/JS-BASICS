@@ -1,3 +1,15 @@
+// simple callback example
+
+function fullName(name, callback) {
+	callback(name);
+}
+
+fullName('sam', (name) => {
+	console.log('Hello ' + name);
+});
+
+// callback hell example
+
 first(2, (firstResult, err) => {
 	if (!err) {
 		console.log(firstResult);
