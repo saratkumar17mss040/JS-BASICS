@@ -1,3 +1,4 @@
+'use strict';
 // Functions
 
 const power = (num1, num2) => {

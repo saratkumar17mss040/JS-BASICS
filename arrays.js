@@ -1,3 +1,4 @@
+'use strict';
 // Arrays
 
 const sumOfArray = (arr) => arr.reduce((acc, ele) => acc + ele);

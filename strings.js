@@ -1,3 +1,4 @@
+'use strict';
 // Strings
 
 const upperCase = (str) => str.toUpperCase();

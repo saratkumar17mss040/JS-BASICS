@@ -1,3 +1,4 @@
+'use strict';
 // ex-1 Answer - callbacks have been used in event handlers in react, adding listeners in vanillajs and while making fetch requests
 
 // ex-8 Answer - Promises are way more cleaner then callbacks and when more asynchronous callbacks will lead to callback hell which will not be good to read the code and in promises we just need to attach the callbacks using .then
@@ -111,7 +112,7 @@ const syncCallsToServer = (msg1, msg2) => {
 
 syncCallsToServer('hi', 'bye').then((data) => console.log(data));
 
-const syncCallsToServer = async (msg1, msg2) => {
+const syncCallsToServerAsyncAwait = async (msg1, msg2) => {
 	try {
 		const data1 = await fakeFetch(true, msg1);
 		const data2 = await fakeFetch(true, data1 + msg2);
@@ -121,7 +122,7 @@ const syncCallsToServer = async (msg1, msg2) => {
 	}
 };
 
-syncCallsToServer('hi', 'bye');
+syncCallsToServerAsyncAwait('hi', 'bye');
 
 const fetchWithAsyncAwait = async (msg, isResolve) => {
 	try {

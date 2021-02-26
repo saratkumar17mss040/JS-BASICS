@@ -1,3 +1,4 @@
+'use strict';
 // Operators, Branching, Loops
 
 const add = (num1, num2, num3, num4, num5) => {
@@ -119,8 +120,8 @@ const fibo = (num) => {
 	let arr = [0, 1];
 	let n1 = 0,
 		n2 = 1;
-	for (i = 2; i < num; i++) {
-		n3 = n1 + n2;
+	for (let i = 2; i < num; i++) {
+		let n3 = n1 + n2;
 		arr.push(n3);
 		n1 = n2;
 		n2 = n3;

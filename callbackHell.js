@@ -1,3 +1,4 @@
+'use strict';
 // simple callback example
 
 function fullName(name, callback) {
