@@ -112,14 +112,14 @@ const minDates = (date1, date2) => {
 console.log(minDates('21/01/2021', '23/01/2021'));
 
 const encodeString = (str, n) => {
+	let newStr = '';
 	for (let i = 0; i < str.length; i++) {
-		// let newStr = str.slice();
-		// let temp = newStr[i+n];
-		// newStr[i] =
+		newStr += String.fromCharCode(str.charCodeAt(i) + 2);
 	}
+	return newStr;
 };
 
-// console.log(encodeString("neogcamp",2));
+console.log(encodeString('neogcamp', 2));
 
 const toSentenceCase = (str) => {
 	const newStr = str
