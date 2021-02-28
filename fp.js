@@ -10,8 +10,8 @@ Array.prototype.map1 = (callback) => {
 	return newArr;
 };
 
-const mapArr = arr.map1((n) => n + 2);
-console.log(mapArr);
+// const mapArr = arr.map1((n) => n + 2);
+// console.log(mapArr);
 
 Array.prototype.filter1 = (callback) => {
 	const newArr = [];
@@ -23,8 +23,8 @@ Array.prototype.filter1 = (callback) => {
 	return newArr;
 };
 
-const filterArr = arr.filter1((ele) => ele < 3);
-console.log(filterArr);
+// const filterArr = arr.filter1((ele) => ele < 3);
+// console.log(filterArr);
 
 Array.prototype.reduce1 = (callback, accumulator = arr[0]) => {
 	for (let i = accumulator === arr[0] ? 1 : 0; i < arr.length; i++) {
@@ -33,10 +33,10 @@ Array.prototype.reduce1 = (callback, accumulator = arr[0]) => {
 	return accumulator;
 };
 
-const reduceValue1 = arr.reduce1((acc, ele) => acc + ele, 0);
-const reduceValue2 = arr.reduce1((acc, ele) => acc + ele);
-console.log(reduceValue1);
-console.log(reduceValue2);
+// const reduceValue1 = arr.reduce1((acc, ele) => acc + ele, 0);
+// const reduceValue2 = arr.reduce1((acc, ele) => acc + ele);
+// console.log(reduceValue1);
+// console.log(reduceValue2);
 
 Array.prototype.some1 = (arr, callback) => {
 	for (let i = 0; i < arr.length; i++) {
@@ -47,8 +47,8 @@ Array.prototype.some1 = (arr, callback) => {
 	return false;
 };
 
-const isSome = arr.some1(arr, (ele) => ele === 5);
-console.log(isSome);
+// const isSome = arr.some1(arr, (ele) => ele === 5);
+// console.log(isSome);
 
 Array.prototype.every1 = (callback) => {
 	for (let i = 0; i < arr.length; i++) {
@@ -59,8 +59,8 @@ Array.prototype.every1 = (callback) => {
 	return true;
 };
 
-const isEvery = arr.every1((ele) => ele > 2);
-console.log(isEvery);
+// const isEvery = arr.every1((ele) => ele > 2);
+// console.log(isEvery);
 
 Array.prototype.find1 = (callback) => {
 	for (let i = 0; i < arr.length; i++) {
@@ -71,8 +71,8 @@ Array.prototype.find1 = (callback) => {
 	return undefined;
 };
 
-const findElement = arr.find1((ele) => ele > 3);
-console.log(findElement);
+// const findElement = arr.find1((ele) => ele > 3);
+// console.log(findElement);
 
 Array.prototype.forEach1 = (callback) => {
 	for (let i = 0; i < arr.length; i++) {
@@ -80,41 +80,41 @@ Array.prototype.forEach1 = (callback) => {
 	}
 };
 
-let forEachValue = arr.forEach1((ele) => console.log(ele + 2));
-console.log(forEachValue);
+// let forEachValue = arr.forEach1((ele) => console.log(ele + 2));
+// console.log(forEachValue);
 
 const siblingObject = (myObject, ageDifference) => ({
 	...myObject,
 	age: myObject.age - ageDifference,
 });
 
-console.log(siblingObject({ name: 'maha', age: 28 }, 3));
+// console.log(siblingObject({ name: 'maha', age: 28 }, 3));
 
 const addColors = (arr, colors) => {
 	const newArr = arr.slice();
 	return [...newArr, ...colors];
 };
 
-console.log(addColors(['red', 'blue', 'green'], ['yellow', 'pink']));
+// console.log(addColors(['red', 'blue', 'green'], ['yellow', 'pink']));
 
 const birthday = (object) => ({ ...object, age: object.age + 1 });
 
-console.log(birthday({ name: 'sam', age: 28 }));
+// console.log(birthday({ name: 'sam', age: 28 }));
 
-const isNumberLessThan10 = (ele) => ele < 10;
-const numbersArrLessThan10 = arr.filter(isNumberLessThan10);
+// const isNumberLessThan10 = (ele) => ele < 10;
+// const numbersArrLessThan10 = arr.filter(isNumberLessThan10);
 
-console.log(numbersArrLessThan10);
+// console.log(numbersArrLessThan10);
 
 const arrToObject = (ele) => ({ [ele]: ele });
 const arrToObjectMap = arr.map(arrToObject);
 
-console.log(arrToObjectMap);
+// console.log(arrToObjectMap);
 
-const sumOfArray = (acc, ele) => acc + ele;
-const sum = arr.reduce(sumOfArray);
+// const sumOfArray = (acc, ele) => acc + ele;
+// const sum = arr.reduce(sumOfArray);
 
-console.log(sum);
+// console.log(sum);
 
 const oddNumberFilter = (ele) => ele % 2 !== 0;
 const oddNumberAccumulate = (acc, ele) => acc + ele;
@@ -132,36 +132,38 @@ const sumOfOddIndicesNumbers = oddNumberIndicesArray.reduce(
 	oddNumberIndicesAccumulate
 );
 
-console.log(sumOfOddIndicesNumbers);
+// console.log(sumOfOddIndicesNumbers);
 
 const biggestNumber = arr.sort((a, b) => b - a)[0];
 
-console.log(biggestNumber);
+// console.log(biggestNumber);
 
 const numberDivisibleBy10Filter = (ele) => ele % 10 === 0;
 
 const numbersDivisibleBy10Array = arr.filter(numberDivisibleBy10Filter);
 
-console.log(numbersDivisibleBy10Array);
+// console.log(numbersDivisibleBy10Array);
 
 const incrementDecrement = (ele) => (ele % 2 === 0 ? --ele : ++ele);
 
 const changedArray = arr.map(incrementDecrement);
 
-console.log(changedArray);
+// console.log(changedArray);
 
-const evenNumberFilter = (ele) => ele % 2 === 0;
-const evenNumberAccumulate = (acc, ele) => acc + ele;
-
-const evenNumberArray = arr.filter(evenNumberFilter);
-const sumOfEvenNumbers = evenNumberArray.reduce(evenNumberAccumulate);
-
-const sumObject = {
-	sumOfOddNumbers: sumOfOddNumbers,
-	sumOfEvenNumbers: sumOfEvenNumbers,
+const sumOfOddEven = (arr) => {
+	return arr.reduce(
+		(object, ele) => {
+			if (ele % 2 === 0) {
+				return { ...object, sumOfOdd: object.sumOfOdd + ele };
+			} else {
+				return { ...object, sumOfEven: object.sumOfEven + ele };
+			}
+		},
+		{ sumOfOdd: 0, sumOfEven: 0 }
+	);
 };
 
-console.log(sumObject);
+console.log(sumOfOddEven(arr));
 
 const items = [
 	'apple',
@@ -183,29 +185,39 @@ const countLength = (items) => {
 	}, {});
 };
 
-console.log(countLength(items));
+// console.log(countLength(items));
 
 const strArray = ['ae', 'hello', 'mno', 'mn', 'people', 'code', 'vb'];
 
 const vowelsArray = strArray.filter((str) => /[aeiou]/gi.test(str));
 
-console.log(vowelsArray);
+// console.log(vowelsArray);
 
 const itemsWithSameLength = items.map((item) => ({ [item]: item.length }));
 
-console.log(itemsWithSameLength);
+// console.log(itemsWithSameLength);
 
 const giveName = (name) => (msg) => `${name} ${msg}`;
 
-console.log(giveName('sam')('is good'));
+// console.log(giveName('sam')('is good'));
 
-// const logMessage = (msg) => `Sam is ${msg}`;
-// const logdId = (id) => `and his id = ${id}`;
+const giveMsg = giveName('ram');
+// console.log(giveMsg('is bad'));
 
-// const compose = (...functions) => {
-// 	return
-// }
+const logMessage = (username,msg) => `Username: ${username} ${msg}`;
+const logId = (id) => `and his id = ${id}`;
 
-// const logger = compose(logMessage, logId);
+const logger = (id, username) => {
+	return logMessage(username, logId(id));
+};
 
-// console.log(logger('good', 2));
+console.log(logger(1, 'sam'));
+
+const increment = (n) => n + 1;
+const square = (n) => n * n;
+
+const compose = (...functions) => (args) =>
+	functions.reduce((arg, fn) => fn(arg), args);
+
+const incrementThenSquare = compose(increment, square);
+// console.log(incrementThenSquare(2));
