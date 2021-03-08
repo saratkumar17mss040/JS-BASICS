@@ -1,6 +1,6 @@
 'use strict';
 
-const strLength = async (name) => {
+const strLength = (name) => {
 	return `OMG! my name is ${name.length} char long!`;
 };
 
