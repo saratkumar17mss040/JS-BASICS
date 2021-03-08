@@ -16,11 +16,11 @@ const displayStrLength = async (name) => {
 
 displayStrLength('sam').then(console.log);
 
-const failure = async () => {
+const failure = () => {
 	return 'Give my bose speakers and headphones to my sister';
 };
 
-const success = async () => {
+const success = () => {
 	return 'Yay! I am alive !';
 };
 
